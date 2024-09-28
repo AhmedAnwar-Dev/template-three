@@ -1,0 +1,72 @@
+.main-heading {
+  text-transform: uppercase;
+  margin: 0 auto 100px;
+  width: fit-content;
+  padding: 10px 25px;
+  border: solid 3px black;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  position: relative;
+  transition: var(--main-transition) .2s linear ;
+  z-index: 50;
+  transition: var(--main-transition);
+}
+.main-heading:hover {
+  color: white;
+  border-color: white;
+  transition-delay: .5s;
+}
+.main-heading::before,
+.main-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: var(--main-color);
+  border-radius: 50%;
+  transition: var(--main-transition);
+  z-index: -999;
+}
+.main-heading::before {
+  left: -45px;
+}
+.main-heading:hover::before {
+  animation: left .5s linear forwards;
+}
+.main-heading::after {
+  right: -45px;
+}
+.main-heading:hover::after {
+  animation: right .5s linear forwards;
+}
+@keyframes left {
+  50% {
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  100% {
+    left: 0;
+    width: 51%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+@keyframes right {
+  50% {
+    right 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  100% {
+    right: 0;
+    width: 51%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
