@@ -333,6 +333,7 @@ header .container .mega-menu .links li a i {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   background-color: var(--section-background);
+  position: relative;
 }
 .gallery .container {
   display: grid;
@@ -362,7 +363,7 @@ header .container .mega-menu .links li a i {
   opacity: 0;
 }
 .gallery .container .image:hover::before {
-  animation: trnsparent .6s linear backwards;
+  animation: trnsparent .8s;
 }
 .gallery .container .image:hover img {
   transform: rotate(3deg) scale(1.06);
@@ -373,6 +374,117 @@ header .container .mega-menu .links li a i {
   transition: .3s;
 }
 /* End Gallery */
+/* Start Features */
+.features {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.features .container .feature {
+  background-color: white;
+  box-shadow: 0px 0 10px rgb(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.features .container .feature .image {
+  position: relative;
+}
+.features .container .feature .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .container .feature:nth-of-type(1) .image::before {
+  background-color: rgba(233, 30, 98, 0.5);
+}
+.features .container .feature:nth-of-type(2) .image::before {
+  background-color: rgba(0, 150, 135, 0.5);
+}
+.features .container .feature:nth-of-type(3) .image::before {
+  background-color: rgba(3, 168, 244, 0.5);;
+}
+
+.features .container .feature img {
+  width: 100%;
+  max-width: 100%;
+}
+.features .container .feature .info {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.features .container .feature .info::before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 100%;
+  top: -60px;
+  left: 0;
+  transform: skewY(-13deg);
+  z-index: -1;
+}
+.features .container .feature:hover .info::before {
+  animation: repeat .5s forwards;
+}
+.features .container .feature h1 {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+.features .container .feature h1::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  z-index: 2;
+}
+.features .container .feature:nth-of-type(1) h1::before  {
+  background-color: #e91e63;
+}
+.features .container .feature:nth-of-type(2) h1::before{
+  background-color: #009688;
+}
+.features .container .feature:nth-of-type(3) h1::before  {
+  background-color: #03A9F4;;
+}
+.features .container .feature p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px 0;
+  font-weight: bold;
+  color: #777;
+}
+.features .container .feature a {
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 6px;
+  border: 3px solid;
+  font-size: 20px;
+  font-weight: bold;
+  width: fit-content;
+  padding: 10px 20px;
+}
+.features .container .feature:nth-of-type(1) a {
+  color: #e91e63;
+}
+.features .container .feature:nth-of-type(2) a {
+  color: #009688;
+}
+.features .container .feature:nth-of-type(3) a {
+  color: #03A9F4;;
+}
+/* End Features */
 /* Start Animation */
 @keyframes image {
   0% {
@@ -416,6 +528,11 @@ header .container .mega-menu .links li a i {
     opacity: 0;
     width: 200%;
     height: 200%;
+  }
+}
+@keyframes repeat {
+  to {
+    transform: skewY(13deg) rotate(180deg)
   }
 }
 /* End Animation */
