@@ -363,7 +363,7 @@ header .container .mega-menu .links li a i {
   opacity: 0;
 }
 .gallery .container .image:hover::before {
-  animation: trnsparent .8s;
+  animation: trnsparent 1s;
 }
 .gallery .container .image:hover img {
   transform: rotate(3deg) scale(1.06);
@@ -426,7 +426,7 @@ header .container .mega-menu .links li a i {
   border-width: 0px 0px 125px 500px;
   border-style: solid;
   border-color: transparent transparent white transparent;
-  top: -125px;
+  top: -123px;
   right: 0;
   transition: var(--main-transition);
 }
@@ -910,7 +910,8 @@ header .container .mega-menu .links li a i {
 }
 .events .container .event .box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 30px;
 }
 @media (max-width: 991px) {
@@ -920,8 +921,9 @@ header .container .mega-menu .links li a i {
 }
 .events .container .event .box .text {
   border: solid 1px #CCC;
-  width: 20%;
+  width: 75px;
   border-radius: 5px;
+  transition: var(--main-transition) linear;
 }
 .events .container .event .box h3 {
   display: flex;
@@ -936,6 +938,11 @@ header .container .mega-menu .links li a i {
   border-top: #ccc solid 1px;
   text-align: center;
   padding: 5px 0;
+  transition: var(--main-transition) linear;
+}
+.events .container .event .box .text:hover,
+.events .container .event .box .text:hover p {
+  border-color: var(--main-color);
 }
 .events .container .event .info > .text {
   text-align: center;
@@ -955,27 +962,28 @@ header .container .mega-menu .links li a i {
   padding: 15px 35px;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   background-color: #eee;
   border-radius: 50px
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .events .container .form {
-    border-radius: 10px;
+    border-radius: 0;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    max-width: 100%;
   }
 }
 .events .container .form input[type="email"] {
-  width: calc(100% - 140px);
+  width: calc(100% - 130px);
   padding: 15px;
   outline: none;
   border: none;
   border-radius: 50px;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .events .container .form input[type="email"] {
-    border-radius: 10px;
+    border-radius: 0;
     width: 100%;
   }
 }
@@ -984,18 +992,19 @@ header .container .mega-menu .links li a i {
   transition: var(--main-transition);
 }
 .events .container .form input[type="email"]:focus::placeholder {
-  color: #33333300;
+  color: transparent;
 }
 .events .container .form input[type="submit"] {
-  width: 120px;
+  width: 130px;
   border: none;
   background: var(--main-color);
   color: white;
   border-radius: 50px;
+  cursor: pointer;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .events .container .form input[type="submit"] {
-    border-radius: 10px;
+    border-radius: 0;
     margin-top: 15px;
     padding: 15px;
   }
