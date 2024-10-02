@@ -880,20 +880,8 @@ header .container .mega-menu .links li a i {
   padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
-.events > div.top,
-.events > div.bottom {
-  position: absolute;
-  background-image: url(../image/dots.png);
-  background-repeat: no-repeat;
-  top: 30%;
-  right: 0px;
-  width: 204px;
-  height: 186px;
-  z-index: -25;
-}
-.events > div.bottom {
-  top: 70%;
-  left: 0px;
+.events .container {
+  position: relative;
 }
 .events .container .event {
   display: flex;
@@ -1010,6 +998,357 @@ header .container .mega-menu .links li a i {
   }
 }
 /* End latest events */
+/* Start pricng plans */
+.pricing {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+.pricing .container .box {
+  background: white;
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+  z-index: 1;
+  position: relative;
+}
+@media (min-width: 1200px) {
+  .pricing .container .box.two {
+    transform: translateY(-20px);
+  }
+}
+.pricing .container .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #dddddd48;
+  height: 50%;
+  width: 0;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.pricing .container .box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #dddddd48;
+  height: 50%;
+  width: 0;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.pricing .container .box:hover::before,
+.pricing .container .box:hover::after {
+  width: 100%;
+}
+.pricing .container .box .popular {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  background: var(--main-color);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 7px 30px;
+  writing-mode: vertical-rl;
+}
+.pricing .container .box .popular::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: transparent 20px solid;
+  border-bottom-color: white;
+}
+.pricing .container .box .info {
+  text-align: center;
+  padding: 15px;
+}
+.pricing .container .box .info h3 {
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+.pricing .container .box .info img {
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+.pricing .container .box .info h1 {
+  color: var(--main-color);
+  font-size: 55px;
+  margin: 0;
+}
+.pricing .container .box .info p {
+  color: #777;
+  font-size: 15px;
+  margin: 10px 0;
+}
+.pricing .container .box ul {}
+.pricing .container .box ul li {
+  padding: 21px 20px;
+  border-top: 1px solid #ddd;
+}
+.pricing .container .box  ul li::before {
+  font-family: "Font Awesome 5 Free"; 
+  content: "\f00c";
+  font-weight: bold;
+  color: var(--main-color);
+  margin-right: 10px;
+}
+.pricing .container .box a {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  width: fit-content;
+  border: solid 2px var(--main-color);
+  color: var(--main-color);
+  padding: 10px;
+  margin: 35px auto;
+  border-radius: 6px;
+  transition: var(--main-transition);
+}
+.pricing .container .box a:hover {
+  background: var(--main-color-alt);
+  border-color: var(--main-color-alt);
+  color: white;
+}
+/* End pricng plans */
+/* Start Top videos */
+.videos {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+.videos .container {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .videos .container {
+    flex-direction: column;
+  }
+}
+.videos .container .list {
+  border: 1px solid #ddd;
+}
+.videos .container .list .name {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #e7e7e7;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.videos .container .list ul li {
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.videos .container .list ul li:hover {
+  background-color: #f5f5f5;
+  color: var(--main-color);
+}
+.videos .container .list ul li span {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+}
+.videos .container .player {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--section-background);
+}
+.videos .container .player img {
+  max-width: 100%;
+}
+.videos .container .player p {
+  background-color: white;
+  padding: 20px;
+}
+/* End Top videos */
+/* Start our awosome State */
+.state {
+  padding-top: calc(var(--main-padding-top) - 30px);
+  padding-bottom: calc(var(--main-padding-bottom) - 30px);
+  background-image: url(../image/stats.jpg);
+  background-size: cover;
+  position: relative;
+}
+.state::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(221, 221, 221, 0.97);
+}
+.state h2 {
+  position: relative;
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+.state .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.state .container .box {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 35px 0;
+  align-items: center;
+  position: relative;
+}
+.state .container .box::before,
+.state .container .box::after {
+  content: "";
+  position: absolute;
+  background: var(--main-color);
+  width: 2px;
+  height: 0;
+  transition: calc(var(--main-transition) + .7s);
+}
+.state .container .box::before {
+  top: 0;
+  left: 0;
+}
+.state .container .box::after {
+  bottom: 0;
+  right: 0;
+}
+.state .container .box:hover::before,
+.state .container .box:hover::after {
+  height: 100%;
+}
+.state .container .box i {
+  font-size: 35px;
+  color: #333;
+  transition: var(--main-transition);
+}
+.state .container .box .number {
+  font-size: 35px;
+  font-weight: bold;
+  color: #333;
+  transition: var(--main-transition);
+}
+.state .container .box:hover i,
+  .state .container .box:hover .number {
+    color: black;
+  }
+.state .container .box .text {
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  transition: var(--main-transition);
+}
+.state .container .box:hover .text {
+  color: var(--main-color-alt);
+}
+/* End our awosome State */
+/* Start request discount  */
+.discount {
+  display: flex;
+}
+@media (max-width: 991px) {
+  .discount {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.discount .title-discount {
+  flex-basis: 50%;
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-image: url(../image/discount-background1.jpg);
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .discount .title-discount{
+    padding: 0;
+  }
+}
+.discount .title-discount::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 136, 244, 0.973);
+  z-index: -1;
+}
+.discount .title-discount h1 {
+  font-size: 40px;
+}
+.discount .title-discount p {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 2;
+}
+.discount .title-discount img {
+  max-width: 300px;
+}
+.discount form {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  padding: 100px 0;
+  text-align: center;
+  background-image: url(../image/discount-background2.jpg);
+  position: relative;
+}
+@media (max-width: 991px) {
+.discount form {
+  padding: 50px 0;
+}
+}
+.discount form input,
+.discount form textarea {
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #c5c5c5;
+  padding: 15px;
+  background: #f8f8f8;
+  width: 300px;
+  caret-color: var(--main-color);
+}
+.discount form textarea {
+  resize: none;
+  height: 180px;
+}
+.discount form input[type="submit"] {
+  background: var(--main-color);
+  padding: 15px 0;
+  border-radius: 5px;
+  color: white;
+}
+/* End request discount  */
 /* Start Animation */
 @keyframes image {
   0% {

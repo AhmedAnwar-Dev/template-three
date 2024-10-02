@@ -42,6 +42,20 @@
 .main-heading:hover::after {
   animation: right .5s linear forwards;
 }
+div.top.dots,
+div.bottom.dots {
+  position: absolute;
+  background-image: url(../image/dots.png);
+  background-repeat: no-repeat;
+  top: 30%;
+  right: 0px;
+  width: 204px;
+  height: 186px;
+}
+div.bottom.dots {
+  top: 70%;
+  left: 0px;
+}
 @keyframes left {
   50% {
     left: 0;
